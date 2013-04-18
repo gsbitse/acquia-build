@@ -1,6 +1,8 @@
 <?php
 
-$ini_array = parse_ini_file("~/build/settings/config.ini");
+chdir("~/build/settings");
+
+$ini_array = parse_ini_file("config.ini");
 
 if (isset($ini_array['acquia_key'])) {
   variable_set('acquia_key', $ini_array['acquia_key']);

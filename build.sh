@@ -6,12 +6,20 @@
 
 echo "start of build.sh on acquia: server = $1 rebuild = $2"
 
+##########################################################
+# get the password and account email
+#
+
 cd ~/build
 
 read -r PASSWORD < settings/password.txt
 read -r ACCTEMAIL < settings/email.txt
 
 echo "account email: $ACCTEMAIL"
+
+##########################################################
+# change to the docroot directory
+#
 
 if test $1 = "dev"
 then
@@ -50,7 +58,15 @@ fi
 
 pwd
 
-#ret_code=$(drush updatedb --backend)
+##########################################################
+# save the docroot directory
+#
+
+docroot_dir=$PWD
+
+##########################################################
+# run drush site install and script (after the install 
+#
 
 ret_code=0
 
@@ -58,12 +74,18 @@ if test $2 = "true"
 then
   ret_code=$(drush si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="$ACCTEMAIL" gsb_public)
   echo "drush si ret_code = $ret_code"
-  ret_code=$(drush scr --yes ~/build/bin/acquia-build/after_build.php)
+  cd ~/build/bin/acquia-build
+  ret_code=$(drush scr --yes after_build.php)
   echo "product sub ret_code = $ret_code"
 fi
 
+##########################################################
+# save the docroot directory
+#
+
 if test $2 != "true"
 then
+  cd ${docroot_dir}
   ret_code=$(drush updb -y)
   echo "drush updb ret_code = $ret_code"
 fi
@@ -72,7 +94,7 @@ echo "end of build.sh on acquia"
 
 return 0
 
-############################################
+##########################################################
 # end of build script
-
+#
 

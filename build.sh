@@ -6,7 +6,7 @@
 
 echo "start of build.sh on acquia: server = $1 rebuild = $2"
 
-read -r PASSWORD < ../settings/password.txt
+read -r PASSWORD < ../../settings/password.txt
 
 if test $1 = "dev"
 then

@@ -53,7 +53,7 @@ if test $2 = "true"
 then
   ret_code=$(drush si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="gmercer@stanford.edu" gsb_public)
   echo "drush si ret_code = $ret_code"
-  ret_code=$(drush scr --yes ~/build/after_build.php)
+  ret_code=$(drush scr --yes ~/build/bin/acquia-build/after_build.php)
   echo "product sub ret_code = $ret_code"
 fi
 

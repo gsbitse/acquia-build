@@ -6,8 +6,10 @@
 
 echo "start of build.sh on acquia: server = $1 rebuild = $2"
 
-read -r PASSWORD < ../../settings/password.txt
-read -r ACCTEMAIL < ../../settings/email.txt
+cd ~/build
+
+read -r PASSWORD < settings/password.txt
+read -r ACCTEMAIL < settings/email.txt
 
 echo "account email: $ACCTEMAIL"
 

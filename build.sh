@@ -9,6 +9,8 @@ echo "start of build.sh on acquia: server = $1 rebuild = $2"
 read -r PASSWORD < ../../settings/password.txt
 read -r ACCTEMAIL < ../../settings/email.txt
 
+echo "account email: $ACCTEMAIL"
+
 if test $1 = "dev"
 then
   cd /mnt/www/html/gsbpublicdev/docroot
@@ -52,7 +54,7 @@ ret_code=0
 
 if test $2 = "true"
 then
-  ret_code=$(drush si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="gmercer@stanford.edu" gsb_public)
+  ret_code=$(drush si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="$ACCTEMAIL" gsb_public)
   echo "drush si ret_code = $ret_code"
   ret_code=$(drush scr --yes ~/build/bin/acquia-build/after_build.php)
   echo "product sub ret_code = $ret_code"

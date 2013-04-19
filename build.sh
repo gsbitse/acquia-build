@@ -67,7 +67,7 @@ pwd
 docroot_dir=$PWD
 
 ##########################################################
-# run drush site install and script (after the install 
+# run drush site install and script (after the install) 
 #
 
 ret_code=0
@@ -79,6 +79,14 @@ then
   ret_code=$(drush scr --yes $build_dir/after_build.php)
   echo "product sub ret_code = $ret_code"
 fi
+
+##########################################################
+# run drush script to clear apc
+#
+
+ret_code=$(drush scr --yes $build_dir/apc_clear.php)
+echo "apc cache cleared"
+
 
 ##########################################################
 # save the docroot directory

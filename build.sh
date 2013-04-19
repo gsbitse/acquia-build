@@ -21,6 +21,8 @@ echo "account email: $ACCTEMAIL"
 # change to the docroot directory
 #
 
+build_dir="/mnt/gfs/home/gsbpublic/build/bin/acquia-build"
+
 if test $1 = "dev"
 then
   cd /mnt/www/html/gsbpublicdev/docroot
@@ -74,8 +76,7 @@ if test $2 = "true"
 then
   ret_code=$(drush si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="$ACCTEMAIL" gsb_public)
   echo "drush si ret_code = $ret_code"
-  cd ~/build/bin/acquia-build
-  ret_code=$(drush scr --yes after_build.php)
+  ret_code=$(drush scr --yes $build_dir/after_build.php)
   echo "product sub ret_code = $ret_code"
 fi
 

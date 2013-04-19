@@ -1,8 +1,8 @@
 <?php
 
-chdir("~/build/settings");
 
-$ini_array = parse_ini_file("config.ini");
+$ini_array = parse_ini_file("/mnt/gfs/home/gsbpublic/build/settings/config.ini");
+print_r($ini_array);
 
 if (isset($ini_array['acquia_key'])) {
   variable_set('acquia_key', $ini_array['acquia_key']);

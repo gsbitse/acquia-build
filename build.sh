@@ -84,10 +84,8 @@ fi
 # run drush script to clear apc
 #
 
-# ret_code=$(drush scr --yes $build_dir/apc_clear.php)
-ret_code=$(drush cc apc)
+ret_code=$(drush scr --yes $build_dir/apc_clear.php)
 echo "apc cache cleared"
-
 
 ##########################################################
 # save the docroot directory

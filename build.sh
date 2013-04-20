@@ -22,6 +22,7 @@ echo "account email: $ACCTEMAIL"
 #
 
 build_dir="/mnt/gfs/home/gsbpublic/build/bin/acquia-build"
+site_url="http://gsbpublicdev2.prod.acquia-sites.com/"
 
 if test $1 = "dev"
 then
@@ -84,7 +85,7 @@ fi
 # run drush script to clear apc
 #
 
-ret_code=$(drush scr --yes $build_dir/apc_clear.php)
+ret_code=$(drush --yes --uri=$site_url cc apc)
 echo "apc cache cleared"
 
 ##########################################################

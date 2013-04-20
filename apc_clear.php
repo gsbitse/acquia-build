@@ -1,7 +1,7 @@
 <?php
 
-shell_exec("export PHP_INI_SCAN_DIR=/etc/php5/conf.d");
+variable_set('apc_flush_webservers_to_flush', $base_url)
 
-$ret = apc_clear_cache();
-print("return from apc_clear_cache = $ret");
+shell_exec("drush cc apc");
+
 

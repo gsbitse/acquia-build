@@ -35,7 +35,7 @@ fi
 
 if test $1 = "stage"
 then
-  cd /mnt/www/html/gsbpublictest/docroot
+  cd /mnt/www/html/gsbpublicstg/docroot
 fi
 
 if test $1 = "stage2"

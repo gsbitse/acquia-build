@@ -84,7 +84,8 @@ fi
 # run drush script to clear apc
 #
 
-ret_code=$(drush scr --yes $build_dir/apc_clear.php)
+# ret_code=$(drush scr --yes $build_dir/apc_clear.php)
+ret_code=$(drush cc apc)
 echo "apc cache cleared"
 
 

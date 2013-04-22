@@ -32,7 +32,7 @@ fi
 if test $1 = "dev2"
 then
   cd /mnt/www/html/gsbpublicdev2/docroot
-  site_url="http://gsbpublicdev.prod.acquia-sites.com/"
+  site_url="http://gsbpublicdev2.prod.acquia-sites.com/"
 fi
 
 if test $1 = "stage"

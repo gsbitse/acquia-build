@@ -83,16 +83,7 @@ if test $2 = "true"
 then
   ret_code=$(drush si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="$ACCTEMAIL" gsb_public)
   echo "drush si ret_code = $ret_code"
-  ret_code=$(drush scr --yes $build_dir/after_build.php)
-  echo "product sub ret_code = $ret_code"
 fi
-
-##########################################################
-# run drush script to clear apc
-#
-
-ret_code=$(drush --yes --uri=$site_url cc apc)
-echo "apc cache cleared"
 
 ##########################################################
 # save the docroot directory

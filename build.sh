@@ -74,9 +74,9 @@ pwd
 docroot_dir=$PWD
 
 ##########################################################
-# sleep for 30 seconds to give time for the pushed code to appear.
-echo "Sleeping for 30 seconds to give time for the code to appear."
-sleep 30
+# sleep for 2 minutes to give time for the pushed code to appear.
+echo "Sleeping for 2 minutes to give time for the code to appear."
+sleep 120
 
 ##########################################################
 # run drush site install and script (after the install) 

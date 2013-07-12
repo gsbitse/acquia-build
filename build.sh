@@ -101,6 +101,18 @@ then
   echo "drush updb ret_code = $ret_code"
 fi
 
+##########################################################
+# do feature revert
+#
+
+if test $2 != "true"
+then
+  cd ${docroot_dir}
+  ret_code=$(drush eval "features_revert();")
+  echo "drush features_revert ret_code = $ret_code"
+fi
+
+
 echo "end of build.sh on acquia"
 
 return 0

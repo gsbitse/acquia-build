@@ -59,12 +59,6 @@ then
   site_url="http://gsbpubliclt.prod.acquia-sites.com/"
 fi
 
-if test $1 = "prod"
-then
-  cd /mnt/www/html/gsbpublic/docroot
-  site_url="http://gsbpublic.prod.acquia-sites.com/"
-fi
-
 pwd
 
 ##########################################################

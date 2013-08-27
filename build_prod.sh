@@ -21,8 +21,6 @@ echo "account email: $ACCTEMAIL"
 # change to the docroot directory
 #
 
-build_dir="/mnt/gfs/home/gsbpublic/build/bin/acquia-build"
-
 # for testing on dev2
 cd /mnt/www/html/gsbpublicdev2/docroot
 site_url="http://gsbpublicdev2.prod.acquia-sites.com/"

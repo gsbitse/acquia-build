@@ -4,7 +4,7 @@
 # run update.php on the site
 #
 
-echo "start of build_prod.sh on acquia: server = $1 rebuild = $2"
+echo "start of build_prod.sh on acquia: server = prod"
 
 ##########################################################
 # get the password and account email
@@ -23,8 +23,13 @@ echo "account email: $ACCTEMAIL"
 
 build_dir="/mnt/gfs/home/gsbpublic/build/bin/acquia-build"
 
-cd /mnt/www/html/gsbpublic/docroot
-site_url="http://gsbpublic.prod.acquia-sites.com/"
+# for testing on dev2
+cd /mnt/www/html/gsbpublicdev2/docroot
+site_url="http://gsbpublicdev2.prod.acquia-sites.com/"
+
+# uncomment for prod 
+#cd /mnt/www/html/gsbpublic/docroot
+#site_url="http://gsbpublic.prod.acquia-sites.com/"
 
 pwd
 
@@ -43,20 +48,17 @@ sleep 120
 # run update.php
 #
 
-#cd ${docroot_dir}
-#ret_code=$(drush updb -y)
-#echo "drush updb ret_code = $ret_code"
+cd ${docroot_dir}
+ret_code=$(drush updb -y)
+echo "drush updb ret_code = $ret_code"
 
 ##########################################################
 # do feature revert
 #
 
-#if test $2 != "true"
-#then
-#  cd ${docroot_dir}
-#  ret_code=$(drush eval "features_revert();")
-#  echo "drush features_revert ret_code = $ret_code"
-#fi
+cd ${docroot_dir}
+ret_code=$(drush eval "features_revert();")
+echo "drush features_revert ret_code = $ret_code"
 
 echo "end of build_prod.sh on acquia"
 

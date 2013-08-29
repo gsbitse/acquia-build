@@ -22,12 +22,12 @@ echo "account email: $ACCTEMAIL"
 #
 
 # for testing on dev2
-cd /mnt/www/html/gsbpublicdev2/docroot
-site_url="http://gsbpublicdev2.prod.acquia-sites.com/"
+#cd /mnt/www/html/gsbpublicdev2/docroot
+#site_url="http://gsbpublicdev2.prod.acquia-sites.com/"
 
 # uncomment for prod 
-#cd /mnt/www/html/gsbpublic/docroot
-#site_url="http://gsbpublic.prod.acquia-sites.com/"
+cd /mnt/www/html/gsbpublic/docroot
+site_url="http://gsbpublic.prod.acquia-sites.com/"
 
 pwd
 

@@ -106,6 +106,17 @@ then
   echo "drush features_revert ret_code = $ret_code"
 fi
 
+##########################################################
+# do a clear cache all
+#
+
+if test $2 != "true"
+then
+  cd ${docroot_dir}
+  ret_code=$(drush cc all)
+  echo "drush features_revert ret_code = $ret_code"
+fi
+
 
 echo "end of build.sh on acquia"
 

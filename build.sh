@@ -114,7 +114,7 @@ if test $2 != "true"
 then
   cd ${docroot_dir}
   ret_code=$(drush cc all)
-  echo "drush features_revert ret_code = $ret_code"
+  echo "drush cc all ret_code = $ret_code"
 fi
 
 

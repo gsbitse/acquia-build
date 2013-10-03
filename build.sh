@@ -80,7 +80,7 @@ ret_code=0
 
 if test $2 = "true"
 then
-  ret_code=$(drush si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="$ACCTEMAIL" gsb_public)
+  ret_code=$(drush5 si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="$ACCTEMAIL" gsb_public)
   echo "drush si ret_code = $ret_code"
 fi
 
@@ -91,7 +91,7 @@ fi
 if test $2 != "true"
 then
   cd ${docroot_dir}
-  ret_code=$(drush updb -y)
+  ret_code=$(drush5 updb -y)
   echo "drush updb ret_code = $ret_code"
 fi
 
@@ -102,7 +102,7 @@ fi
 if test $2 != "true"
 then
   cd ${docroot_dir}
-  ret_code=$(drush eval "features_revert();")
+  ret_code=$(drush5 fra -y)
   echo "drush features_revert ret_code = $ret_code"
 fi
 
@@ -113,7 +113,7 @@ fi
 if test $2 != "true"
 then
   cd ${docroot_dir}
-  ret_code=$(drush cc all)
+  ret_code=$(drush5 cc all)
   echo "drush cc all ret_code = $ret_code"
 fi
 

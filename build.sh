@@ -80,7 +80,7 @@ ret_code=0
 
 if test $2 = "true"
 then
-  ret_code=$(drush5 si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --acount-mail="$ACCTEMAIL" gsb_public)
+  ret_code=$(drush5 si -y --site-name="gsbpublic" --account-pass="$PASSWORD" --account-mail="$ACCTEMAIL" gsb_public)
   echo "drush si ret_code = $ret_code"
 fi
 

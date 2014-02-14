@@ -107,6 +107,29 @@ then
 fi
 
 ##########################################################
+# Set our google analytics account for stage.
+#
+
+if test $2 != "true"
+then
+  cd ${docroot_dir}
+  ret_code=$(drush5 vset googleanalytics_account)
+  echo "drush5 vset -y 'googleanalytics_account' 'UA-17436788-1'"
+fi
+
+##########################################################
+# Enable development modules
+#
+
+if test $2 != "true"
+then
+  cd ${docroot_dir}
+  ret_code=$(drush5 en dev modules)
+  echo "drush5 en -y devel"
+  echo "drush5 vd"
+fi
+
+##########################################################
 # do a clear cache all
 #
 

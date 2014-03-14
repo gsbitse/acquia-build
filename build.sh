@@ -118,6 +118,17 @@ then
 fi
 
 ##########################################################
+# Set the faculty profile webservice url.
+#
+
+if test $2 != "true"
+then
+  cd ${docroot_dir}
+  ret_code=$(drush5 vset gsb_feature_faculty_ct_service_url)
+  echo "drush5 vset -y 'gsb_feature_faculty_ct_service_url' 'https://gsbapps-qa.stanford.edu/utilitywebservice/global/UtilityWebservice.asmx'"
+fi
+
+##########################################################
 # Enable development modules
 #
 

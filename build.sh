@@ -113,8 +113,8 @@ fi
 if test $2 != "true"
 then
   cd ${docroot_dir}
-  ret_code=$(drush5 vset googleanalytics_account)
-  echo "drush5 vset -y 'googleanalytics_account' 'UA-17436788-1'"
+  ret_code=$(drush5 vset -y 'googleanalytics_account' 'UA-17436788-1')
+  echo "drush5 vset -y 'googleanalytics_account' 'UA-17436788-1' = $ret_code"
 fi
 
 ##########################################################
@@ -124,8 +124,8 @@ fi
 if test $2 != "true"
 then
   cd ${docroot_dir}
-  ret_code=$(drush5 vset gsb_feature_faculty_ct_service_url)
-  echo "drush5 vset -y 'gsb_feature_faculty_ct_service_url' 'https://gsbapps-qa.stanford.edu/utilitywebservice/global/UtilityWebservice.asmx'"
+  ret_code=$(drush5 vset -y 'gsb_feature_faculty_ct_service_url' 'https://gsbapps-qa.stanford.edu/utilitywebservice/global/UtilityWebservice.asmx')
+  echo "drush5 vset -y 'gsb_feature_faculty_ct_service_url' 'https://gsbapps-qa.stanford.edu/utilitywebservice/global/UtilityWebservice.asmx' = $ret_code"
 fi
 
 ##########################################################
@@ -135,9 +135,10 @@ fi
 if test $2 != "true"
 then
   cd ${docroot_dir}
-  ret_code=$(drush5 en dev modules)
-  echo "drush5 en -y devel"
-  echo "drush5 vd"
+  ret_code=$(drush5 en -y devel)
+  echo "drush5 en -y devel = $ret_code"
+  ret_code=$(drush5 vd)
+  echo "drush5 vd = $ret_code"
 fi
 
 ##########################################################

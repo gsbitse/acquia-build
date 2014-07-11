@@ -47,18 +47,6 @@ then
   site_url="http://gsbpublicstg2.prod.acquia-sites.com/"
 fi
 
-if test $1 = "sandbox"
-then
-  cd /mnt/www/html/gsbpublicsand/docroot
-  site_url="http://gsbpublicsand.prod.acquia-sites.com/"
-fi
-
-if test $1 = "loadtest"
-then
-  cd /mnt/www/html/gsbpubliclt/docroot
-  site_url="http://gsbpubliclt.prod.acquia-sites.com/"
-fi
-
 pwd
 
 ##########################################################

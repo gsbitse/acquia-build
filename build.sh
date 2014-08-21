@@ -17,11 +17,13 @@ while [ ! -f "update-finished.txt" ]; # true if /your/file does not exist
 do
   sleep 1
   COUNT=$((COUNT+1))
-  if [[ $COUNT = 120 ]]; then
+  if [ $COUNT = 120 ]; then
     echo "It seemed to take too long to update the git files."
     exit 1
   fi
 done
+
+rm update-finished.txt
 
 cd ~/build
 

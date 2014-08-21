@@ -10,6 +10,19 @@ echo "start of build.sh on acquia: server = $1 rebuild = $2"
 # get the password and account email
 #
 
+# Check to see if the code update finished before continuing.
+echo "Waiting for the git repository to be updated."
+COUNT=0;
+while [ ! -f "update-finished.txt" ]; # true if /your/file does not exist
+do
+  sleep 1
+  COUNT=$((COUNT+1))
+  if [[ $COUNT = 120 ]]; then
+    echo "It seemed to take too long to update the git files."
+    exit 1
+  fi
+done
+
 cd ~/build
 
 
@@ -62,8 +75,8 @@ docroot_dir=$PWD
 
 ##########################################################
 # sleep for 2 minutes to give time for the pushed code to appear.
-echo "Sleeping for 2 minutes to give time for the code to appear."
-sleep 120
+#echo "Sleeping for 2 minutes to give time for the code to appear."
+#sleep 120
 
 ##########################################################
 # run drush site install and script (after the install) 

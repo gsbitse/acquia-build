@@ -13,7 +13,7 @@ echo "start of build.sh on acquia: server = $1"
 # Check to see if the code update finished before continuing.
 echo "Waiting for the git repository to be updated."
 COUNT=0;
-while [ ! -f "update-finished.txt" ]; # true if /your/file does not exist
+while [ ! -f "~/update-finished.txt" ]; # true if /your/file does not exist
 do
   sleep 1
   COUNT=$((COUNT+1))
@@ -23,7 +23,7 @@ do
   fi
 done
 
-rm update-finished.txt
+rm ~/update-finished.txt
 
 cd ~/build
 

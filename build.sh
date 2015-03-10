@@ -23,7 +23,7 @@ do
   fi
 done
 
-rm ~/update-finished.txt
+rm -f ~/update-finished.txt
 
 cd ~/build
 
